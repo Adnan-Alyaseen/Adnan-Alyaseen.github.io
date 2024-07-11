@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VAT Invoice Generator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>VAT Invoice Generator</h1>
+        <form id="invoiceForm">
+            <fieldset>
+                <legend>Your Company Information</legend>
+                <label for="companyName">Company Name:</label>
+                <input type="text" id="companyName" required>
+                
+                <label for="vatNumber">VAT Number:</label>
+                <input type="text" id="vatNumber" required>
+                
+                <label for="companyAddress">Address:</label>
+                <textarea id="companyAddress" rows="3" required></textarea>
+            </fieldset>
+            
+            <fieldset>
+                <legend>Client Information</legend>
+                <label for="clientName">Client's Name:</label>
+                <input type="text" id="clientName" required>
+                
+                <label for="clientVatNumber">Client's VAT Number:</label>
+                <input type="text" id="clientVatNumber">
+                
+                <label for="clientAddress">Client's Address:</label>
+                <textarea id="clientAddress" rows="3"></textarea>
+            </fieldset>
+            
+            <fieldset>
+                <legend>Invoice Details</legend>
+                <label for="invoiceDate">Invoice Date:</label>
+                <input type="date" id="invoiceDate" required>
+                
+                <label for="dueDate">Due Date:</label>
+                <input type="date" id="dueDate" required>
+                
+                <label for="invoiceNumber">Invoice Number:</label>
+                <input type="text" id="invoiceNumber" required>
+            </fieldset>
+            
+            <fieldset>
+                <legend>Items</legend>
+                <table id="itemsTable">
+                    <thead>
+                        <tr>
+                            <th>Description</th>
+                            <th>Quantity</th>
+                            <th>Unit Price</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Items will be dynamically added here -->
+                    </tbody>
+                </table>
+                <button type="button" onclick="addItem()">Add Item</button>
+            </fieldset>
+            
+            <fieldset>
+                <legend>Invoice Summary</legend>
+                <label for="grossAmount">Gross Amount (before VAT):</label>
+                <input type="text" id="grossAmount" readonly>
+                
+                <label for="vatAmount">VAT Amount (15%):</label>
+                <input type="text" id="vatAmount" readonly>
+                
+                <label for="totalAmount">Total Amount:</label>
+                <input type="text" id="totalAmount" readonly>
+            </fieldset>
+            
+            <button type="submit">Generate Invoice</button>
+        </form>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
